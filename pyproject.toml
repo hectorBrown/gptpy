@@ -7,6 +7,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
+openai = "^0.26.5"
+argparse = "^1.4.0"
 
 
 [build-system]
