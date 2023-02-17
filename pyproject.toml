@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "gptpy"
+version = "0.1.0"
+description = "Interface with ChatGPT through python."
+authors = ["Hector Brown <hectorjbrown@protonmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+gpt = "gptpy.main:start"
