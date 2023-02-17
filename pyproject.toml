@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "gptpy"
-version = "0.1.0"
-description = "Interface with ChatGPT through python."
+version = "0.1.1"
+description = "Interface with ChatGPT and DallE through python."
 authors = ["Hector Brown <hectorjbrown@protonmail.com>"]
 readme = "README.md"
 
@@ -17,4 +17,5 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-gpt = "gptpy.main:start"
+gpt = "gptpy.main:gpt"
+dalle = "gptpy.main:dalle"
