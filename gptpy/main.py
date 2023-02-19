@@ -47,7 +47,7 @@ def gpt(args=sys.argv[1:]):
     parser = argparse.ArgumentParser(
         description="Interact with ChatGPT from your terminal."
     )
-    parser.add_argument("-T", "--temperature", default=0, type=__is_valid_temperature)
+    parser.add_argument("-T", "--temperature", default=0.8, type=__is_valid_temperature)
     parser.add_argument("prompt")
     args = vars(parser.parse_args(args))
 
