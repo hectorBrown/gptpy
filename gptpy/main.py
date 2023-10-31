@@ -8,7 +8,7 @@ import time
 
 import openai
 import requests
-from appdirs import *
+from appdirs import user_data_dir
 
 data_dir = user_data_dir(appname="gptpy", appauthor=False)
 if not op.exists(data_dir):
@@ -33,7 +33,7 @@ def __get_key():
         )
         key = input("Please input your OpenAI API key: ")
         with open(f"{data_dir}/key", "w") as f:
-            f.write(openai.api_key)
+            f.write(openai.api_key)  # type: ignore
         print("")
     return key
 
@@ -60,7 +60,7 @@ def gpt(args=sys.argv[1:]):
         temperature=args["temperature"],
         max_tokens=2048,
     )
-    print(response.choices[0].text[2:])
+    print(response.choices[0].text[2:])  # type: ignore
 
 
 def dalle(args=sys.argv[1:]):
@@ -77,7 +77,7 @@ def dalle(args=sys.argv[1:]):
     response = openai.Image.create(
         prompt=args["prompt"], n=1, size=f"{args['resolution']}x{args['resolution']}"
     )
-    response = requests.get(response["data"][0]["url"])
+    response = requests.get(response["data"][0]["url"])  # type: ignore
     tmp = tempfile.NamedTemporaryFile(delete=False)
     tmp.write(response.content)
     tmp.close()
